@@ -9,6 +9,6 @@ Vue.config.productionTip = false
 Vue.use(ElementUI);
 
 new Vue({
-  router,//5. 在当前实例挂载路由
+  router,//5.在当前实例挂载路由
   render: h => h(App),
 }).$mount('#app')
