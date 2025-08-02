@@ -1,12 +1,13 @@
 <template>
   <div>
     <el-container>
-      <el-aside width="200px">
+      <el-aside width="auto">
         <common-aside/>
       </el-aside>
       <el-container>
         <el-header>
           <div class="header">
+            <el-button @click="setCollapse"type="primary" icon="el-icon-s-grid" circle></el-button>
           </div>
         </el-header>
         <el-main>
@@ -28,7 +29,12 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    //通过vuex修改 可以传递参数
+    setCollapse(){
+      this.$store.dispatch('setCollapse','')
+    }
+  }
 }
 </script>
 
@@ -37,10 +43,16 @@ export default {
   width: 200px;
   min-height: 400px;
 }
-
+.el-header{
+  padding: 0;
+}
 .header {
   height: 100%;
   width: 100%;
-  background-color: #9b9696;
+  background-color: #d2cdcd;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px 0 20px;
 }
 </style>

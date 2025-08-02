@@ -26,7 +26,11 @@ export default {
   name: "CommonAside",
   data() {
     return{
-      isCollapse:false
+    }
+  },
+  computed: {
+    isCollapse() {
+      return this.$store.state.isCollapse;
     }
   }
 }
