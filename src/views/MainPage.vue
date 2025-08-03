@@ -20,6 +20,7 @@
 
 <script>
 import CommonAside from "@/components/CommonAside";
+import {login} from "@/api";
 
 export default {
   name: "MainPage",
@@ -34,6 +35,11 @@ export default {
     setCollapse(){
       this.$store.dispatch('setCollapse','')
     }
+  },
+  created() {
+    login({username: 'admin', password: '123456'}).then(res => {
+      console.log(res)
+    })
   }
 }
 </script>
